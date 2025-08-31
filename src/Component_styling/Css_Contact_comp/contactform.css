@@ -1,0 +1,246 @@
+.contact-form-container {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    padding: 2rem;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contact-form-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #000000;
+    font-size: 0.95rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #000000;
+    background: #FFFFFF;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #C8102E;
+    box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #A0AEC0;
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-input.error,
+.form-textarea.error {
+    border-color: #E53E3E;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+}
+
+.error-message {
+    color: #E53E3E;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+    font-weight: 500;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: #C8102E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-button:hover:not(:disabled) {
+    background: #A00D26;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(200, 16, 46, 0.3);
+}
+
+.submit-button:active:not(:disabled) {
+    transform: translateY(1);
+}
+
+.submit-button:disabled {
+    background: #CBD5E0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.submit-button-text {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.submit-button:hover:not(:disabled) .submit-button-text {
+    transform: scale(1.02);
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.success-message {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    color: #166534;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form-container {
+        margin: 2rem 1rem 0;
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+    .form-label {
+        font-size: 0.9rem;
+    }
+    .form-input,
+    .form-textarea {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+    .form-textarea {
+        min-height: 100px;
+    }
+    .submit-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-container {
+        margin: 2rem 0.5rem 0;
+        padding: 1rem;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .form-input,
+    .form-textarea {
+        padding: 0.625rem;
+        font-size: 0.9rem;
+    }
+    .submit-button {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-contrast: high) {
+    .form-input,
+    .form-textarea {
+        border-color: #000000;
+        border-width: 2px;
+    }
+    .form-input:focus,
+    .form-textarea:focus {
+        border-color: #C8102E;
+        box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.3);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-form-container,
+    .form-input,
+    .form-textarea,
+    .submit-button {
+        transition: none;
+    }
+    .form-input.error,
+    .form-textarea.error {
+        animation: none;
+    }
+    .loading-spinner {
+        animation: none;
+    }
+}
+
+/* Focus visible for keyboard navigation */
+.submit-button:focus-visible {
+    outline: 2px solid #C8102E;
+    outline-offset: 2px;
+}
+
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+    outline: 2px solid #C8102E;
+    outline-offset: 2px;
+}

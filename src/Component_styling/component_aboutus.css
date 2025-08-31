@@ -1,0 +1,12 @@
+.container {
+  min-height: 100vh;        /* Full screen height */
+  display: flex;
+  justify-content: center;  /* Horizontal center */
+  align-items: center;      /* Vertical center */
+
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  gap: 1rem;
+}

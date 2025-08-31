@@ -1,0 +1,212 @@
+.dev-journey-section {
+  background: linear-gradient(to bottom right, rgba(240, 244, 255, 0.9), rgba(255, 255, 255, 0.9));
+  padding: 60px 16px;
+  backdrop-filter: blur(5px); /* Glassy effect */
+  -webkit-backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.dev-journey-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.dev-journey-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.dev-journey-section-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1f2937;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
+}
+
+.dev-journey-underline-wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 6px;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.dev-journey-animated-underline {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
+  animation: slideWave 2.5s ease-in-out infinite;
+}
+
+.dev-journey-section-subtext {
+  font-size: 18px;
+  color: #6b7280;
+  margin-top: 24px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.dev-journey-main-content {
+  position: relative;
+  min-height: 500px;
+}
+
+.dev-journey-top-right {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(to bottom right, #818cf8, #a78bfa);
+  border-radius: 50%;
+  animation: spin-slow 10s linear infinite;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dev-journey-bottom-left {
+  position: absolute;
+  bottom: -16px;
+  left: -16px;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(to bottom right, #a78bfa, #f472b6);
+  border-radius: 50%;
+  animation: spin-slow 8s linear infinite reverse;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dev-journey-steps {
+  position: absolute;
+  width: 44%;
+}
+
+.dev-journey-steps.dev-journey-left {
+  left: 0;
+  top: 0;
+}
+
+.dev-journey-steps.dev-journey-right {
+  right: 0;
+  top: 0;
+}
+
+.dev-journey-step {
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.dev-journey-steps.dev-journey-left .dev-journey-step {
+  text-align: right;
+  padding-right: 48px;
+}
+
+.dev-journey-steps.dev-journey-right .dev-journey-step {
+  text-align: left;
+  padding-left: 48px;
+}
+
+.dev-journey-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.dev-journey-steps.dev-journey-left .dev-journey-step-header {
+  flex-direction: row-reverse;
+  gap: 8px;
+}
+
+.dev-journey-step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom right, #a78bfa, #f472b6);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+.dev-journey-step h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.dev-journey-step p {
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+/* Animations */
+@keyframes slideWave {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dev-journey-steps {
+    width: 100%;
+    position: static;
+  }
+
+  .dev-journey-steps.dev-journey-left .dev-journey-step,
+  .dev-journey-steps.dev-journey-right .dev-journey-step {
+    text-align: left;
+    padding: 0 16px;
+  }
+
+  .dev-journey-step-header {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 8px;
+  }
+
+  .dev-journey-step-number {
+    margin: 0;
+  }
+
+  .dev-journey-section-title {
+    font-size: 32px;
+  }
+
+  .dev-journey-section-subtext {
+    font-size: 16px;
+  }
+}

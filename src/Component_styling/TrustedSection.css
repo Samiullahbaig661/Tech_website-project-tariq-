@@ -1,0 +1,52 @@
+.trusted-section {
+  background: #f5f5f5; /* Light grey background */
+  padding: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header styles */
+.trusted-header {
+  display: flex;
+  justify-content: center; /* horizontally center items */
+  align-items: center;     /* vertically center items */
+}
+
+
+.trusted-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+}
+
+
+
+/* Logos scrolling area */
+.logos-container {
+  overflow: hidden;
+  white-space: nowrap;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.logos-track {
+  display: inline-flex;
+  animation: scrollLogos 25s linear infinite;
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Individual brand logos */
+.brand-logo {
+  height: 50px;
+  margin: 0 2rem;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+  flex-shrink: 0;
+}

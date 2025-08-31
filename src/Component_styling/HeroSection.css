@@ -1,0 +1,222 @@
+/* Game Hero Section Styles */
+.game-hero-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(243, 243, 243, 0.9), rgba(28, 28, 28, 0.9));
+  color: white;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px); /* Subtle glassy effect for section */
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.game-hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;  
+  width: 100%;
+  gap: 4rem;
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 4rem;
+  background: rgba(33, 32, 32, 0.1); /* Slightly more translucent */
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+  animation: game-hero-fadeIn 1.5s ease-out;
+}
+
+.game-hero-text-content {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.game-hero-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  color: white;
+  animation: game-hero-slideIn 1s ease-out;
+}
+
+.game-hero-highlight {
+  color: #ff2c74;
+  text-shadow: 0 0 15px #a56d80, 0 0 25px #ff2c7263;
+  position: relative;
+}
+
+.game-hero-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border-radius: 2px;
+  animation: game-hero-underlineExpand 1.2s ease-out 0.5s forwards;
+}
+
+.game-hero-description {
+  margin-top: 1.5rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.8;
+  color: #c7c7c7;
+  max-width: 500px;
+  animation: game-hero-fadeInUp 1s ease-out 0.7s forwards;
+  opacity: 0;
+}
+
+.game-hero-button {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 0 20px #ff2c74;
+}
+
+.game-hero-button:hover,
+.game-hero-button.active {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #ff2c74, 0 0 60px #ff2c74;
+  background: linear-gradient(135deg, #ff4b2b, #ff416c); /* Reverse gradient on hover/tap */
+}
+
+.game-hero-image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.game-hero-image {
+  width: 100%;
+  max-width: 450px;
+  animation: game-hero-glow 2s ease-in-out infinite alternate;
+  transition: transform 0.5s ease;
+}
+
+.game-hero-image:hover {
+  transform: scale(1.1); /* Subtle zoom on hover */
+}
+
+.game-hero-particles {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(2px 2px at 30% 40%, #ffffff40, transparent),
+    radial-gradient(1.5px 1.5px at 70% 80%, #ffffff40, transparent),
+    radial-gradient(1px 1px at 90% 10%, #ffffff30, transparent),
+    radial-gradient(1px 1px at 50% 90%, #ffffff20, transparent);
+  background-repeat: repeat;
+  animation: game-hero-moveStars 10s linear infinite; /* Slower for smoother effect */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes game-hero-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes game-hero-slideIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes game-hero-fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes game-hero-underlineExpand {
+  from { width: 0; }
+  to { width: 70%; }
+}
+
+@keyframes game-hero-glow {
+  from { filter: drop-shadow(0 0 5px #ff2c74); }
+  to { filter: drop-shadow(0 0 25px #ff2c74); }
+}
+
+@keyframes game-hero-moveStars {
+  from { background-position: 0 0; }
+  to { background-position: -1000px 1000px; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game-hero-section {
+    padding: 2rem;
+  }
+
+  .game-hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .game-hero-title {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+  }
+
+  .game-hero-description {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 90%;
+    margin: 1rem auto;
+  }
+
+  .game-hero-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  .game-hero-image {
+    max-width: 300px;
+  }
+
+  .game-hero-particles {
+    background-image: radial-gradient(1.5px 1.5px at 30% 40%, #ffffff30, transparent),
+      radial-gradient(1px 1px at 70% 80%, #ffffff30, transparent);
+  }
+}
+
+@media (max-width: 480px) {
+  .game-hero-section {
+    padding: 1.5rem;
+  }
+
+  .game-hero-content {
+    padding: 1.5rem;
+  }
+
+  .game-hero-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .game-hero-description {
+    font-size: 1rem;
+  }
+
+  .game-hero-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .game-hero-image {
+    max-width: 250px;
+  }
+}

@@ -1,0 +1,204 @@
+.contact-header {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(200, 16, 46, 0.05),
+        transparent
+    );
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.contact-header-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-header-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #C8102E;
+    margin: 0 0 1.5rem 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.contact-header-title.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-header-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #C8102E, #E91E63);
+    border-radius: 2px;
+    transition: transform 0.8s ease;
+    transition-delay: 0.4s;
+}
+
+.contact-header-title.fade-in::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.contact-header-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #4A5568;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: 0.3s;
+}
+
+.contact-header-subtitle.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-header-accent {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #C8102E, #E91E63);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.15;
+    }
+}
+
+.contact-header-accent-small {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    background: #C8102E;
+    border-radius: 50%;
+    opacity: 0.08;
+    animation: pulse 4s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-header {
+        padding: 3rem 1.5rem;
+    }
+    .contact-header-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .contact-header-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+    .contact-header-accent {
+        width: 40px;
+        height: 40px;
+        top: 15px;
+        right: 15px;
+    }
+    .contact-header-accent-small {
+        width: 30px;
+        height: 30px;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-header {
+        padding: 2.5rem 1rem;
+    }
+    .contact-header-title {
+        font-size: 2rem;
+        letter-spacing: -0.01em;
+    }
+    .contact-header-subtitle {
+        font-size: 1rem;
+    }
+    .contact-header-title::after {
+        width: 60px;
+        height: 3px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .contact-header-title {
+        color: #B00020;
+    }
+    .contact-header-subtitle {
+        color: #2D3748;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .contact-header-title,
+    .contact-header-subtitle {
+        transition: opacity 0.3s ease;
+        transform: none;
+    }
+    .contact-header::before,
+    .contact-header-accent,
+    .contact-header-accent-small {
+        animation: none;
+    }
+}
