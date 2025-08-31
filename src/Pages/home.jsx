@@ -1,9 +1,9 @@
 import React from "react";
 import TechLandingPage from "../Components/testingpagelanding";
-import TrustedSection from "../components/TrustedSection";
-import AboutSection from "../components/AboutSection";
-import DevelopmentProcessV3 from "../components/DevelopmentProcessV3";
-import ServicesSection from "../components/ServicesSection";
+import TrustedSection from "../Components/TrustedSection";
+import AboutSection from "../Components/AboutSection";
+import DevelopmentProcessV3 from "../Components/DevelopmentProcessV3";
+import Servicessss from "../Components/ServicesSection";
 
 const HomePage = () => {
   return (
@@ -12,9 +12,8 @@ const HomePage = () => {
       <TrustedSection />
       <AboutSection />
       <DevelopmentProcessV3 />
-      <ServicesSection />
+      <Servicessss />
     </>
   );
 };
-
-export default HomePage;
+export default HomePage;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Component_styling/ServicesSection.css';
 import { DollarSign, PieChart, Target } from 'lucide-react'; // Example icons
 
-const ServicesSection = () => {
+const Servicessss = () => {
   const [activeCard, setActiveCard] = useState(null); // Track active card for mobile
 
   const services = [
@@ -43,4 +43,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;
+export default Servicessss;

@@ -1,11 +1,11 @@
 import ServicesHero from "../Components/ServicesHero"
-import ServicesSection from "../components/ServicesSection"
+import Servicessss from "../Components/ServicesSection"
 import WhyChooseUs from "../Components/whychooseservice"
 
 function Services(){
 return(<>
           <ServicesHero/>
-          <ServicesSection/>
+          <Servicessss/>
           <WhyChooseUs/>
       </>
 )}
